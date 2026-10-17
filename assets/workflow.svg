@@ -1,25 +1,145 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="330" viewBox="0 0 1440 330" role="img" aria-labelledby="title desc">
-<title id="title">COMSOL agent research workflow</title><desc id="desc">An AI agent connects the research question, model, computation, analysis and explanation through the COMSOL Java API. The researcher defines goals and reviews conclusions.</desc>
-<defs><linearGradient id="card" x2="0" y2="1"><stop stop-color="#f7fafc"/><stop offset="1" stop-color="#e7eff5"/></linearGradient><linearGradient id="center" x2="1" y2="1"><stop stop-color="#365b74"/><stop offset=".55" stop-color="#18394f"/><stop offset="1" stop-color="#285b69"/></linearGradient><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 8 5 1 9" fill="none" stroke="#385d73" stroke-width="2"/></marker></defs>
-<rect width="1440" height="330" rx="18" fill="#ffffff"/>
-<g font-family="Arial,Helvetica,sans-serif"><text x="36" y="44" font-size="23" font-weight="700" fill="#16384e">An AI agent connects the research workflow</text><text x="36" y="73" font-size="16" fill="#4d6272">Native COMSOL Java API · command-line execution · interpretable results</text>
-<path d="M280 183h24" fill="none" stroke="#385d73" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="36" y="110" width="242" height="146" rx="19" fill="url(#card)" stroke="#8ba5b8" stroke-width="1.6"/>
-<g transform="translate(56 130)" stroke="#18394f" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h34v25H14L6 33v-8H0z"/><path d="M10 9h14M10 16h9"/></g>
-<text x="56" y="201" font-size="23" font-weight="700" fill="#18394f">Question</text><text x="56" y="230" font-size="15" fill="#3b5669">Assumptions &amp; observables</text>
-<path d="M558 183h24" fill="none" stroke="#385d73" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="314" y="110" width="242" height="146" rx="19" fill="url(#card)" stroke="#8ba5b8" stroke-width="1.6"/>
-<g transform="translate(334 130)" stroke="#18394f" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h35v30H0zM12 0v30M23 0v30M0 10h35M0 20h35"/></g>
-<text x="334" y="201" font-size="23" font-weight="700" fill="#18394f">Model</text><text x="334" y="230" font-size="15" fill="#3b5669">Geometry &amp; physics</text>
-<path d="M836 183h24" fill="none" stroke="#385d73" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="592" y="110" width="242" height="146" rx="19" fill="url(#center)" stroke="#8ba5b8" stroke-width="1.6"/>
-<g transform="translate(612 130)" stroke="#ffffff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m3 0 25 15L3 30z"/><path d="M34 1v28"/></g>
-<text x="612" y="201" font-size="23" font-weight="700" fill="#ffffff">Run</text><text x="612" y="230" font-size="15" fill="#dcecf3">Pilot &amp; batch calculations</text>
-<path d="M1114 183h24" fill="none" stroke="#385d73" stroke-width="3" marker-end="url(#arrow)"/>
-<rect x="870" y="110" width="242" height="146" rx="19" fill="url(#card)" stroke="#8ba5b8" stroke-width="1.6"/>
-<g transform="translate(890 130)" stroke="#18394f" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0v31h36M6 23l9-11 9 5 10-17"/><circle cx="15" cy="12" r="2"/><circle cx="24" cy="17" r="2"/></g>
-<text x="890" y="201" font-size="23" font-weight="700" fill="#18394f">Analyze</text><text x="890" y="230" font-size="15" fill="#3b5669">Fields &amp; comparisons</text>
-<rect x="1148" y="110" width="242" height="146" rx="19" fill="url(#card)" stroke="#8ba5b8" stroke-width="1.6"/>
-<g transform="translate(1168 130)" stroke="#18394f" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 0h24l8 8v28H4zM28 0v9h8M11 16h17M11 23h17M11 30h10"/></g>
-<text x="1168" y="201" font-size="23" font-weight="700" fill="#18394f">Explain</text><text x="1168" y="230" font-size="15" fill="#3b5669">Findings &amp; scope</text>
-<text x="36" y="301" font-size="16" fill="#385469">Researcher: define goals, discuss assumptions, and review scientific conclusions.</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+<title id="title">An agent-guided research loop in COMSOL</title><desc id="desc">A research question enters model construction. The agent builds a model, runs a study, inspects the results, and refines the model before another calculation. Interpretable results lead to plots and findings. All physical graphics are illustrative.</desc>
+<defs>
+<linearGradient id="meshfill" x2="0" y2="1"><stop stop-color="#d5e6ff"/><stop offset="1" stop-color="#b7d2f5"/></linearGradient>
+<linearGradient id="field" x1="0" x2="1"><stop stop-color="#6d8fde"/><stop offset=".5" stop-color="#a2d4c5"/><stop offset="1" stop-color="#f3bc7d"/></linearGradient>
+</defs><rect width="1200" height="640" rx="20" fill="#ffffff"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="580" y="59" font-size="33" font-weight="700" fill="#20333e" text-anchor="middle">Agent research loop</text>
+<rect x="18" y="88" width="182" height="222" rx="20" fill="#fff8e6" stroke="#dabe76" stroke-width="2"/>
+<text x="109" y="128" font-size="30" font-weight="700" fill="#20333e" text-anchor="middle">Research</text>
+<text x="109" y="161" font-size="30" font-weight="700" fill="#20333e" text-anchor="middle">question</text>
+<path d="M60 192h99v48H98l-17 16v-16H60z" stroke="#b3913e" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M76 208h66M76 221h43" stroke="#b3913e" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<text x="109" y="290" font-size="26" font-weight="500" fill="#20333e" text-anchor="middle">Your goal</text>
+<rect x="258" y="88" width="297" height="222" rx="20" fill="#eaf2ff" stroke="#b8cbe6" stroke-width="2"/>
+<rect x="603" y="88" width="297" height="222" rx="20" fill="#e7f4ed" stroke="#b5d4c2" stroke-width="2"/>
+<rect x="603" y="375" width="297" height="222" rx="20" fill="#f0ecfa" stroke="#c8bde3" stroke-width="2"/>
+<rect x="258" y="375" width="297" height="222" rx="20" fill="#fff0e4" stroke="#e6c3a5" stroke-width="2"/>
+<text x="282" y="128" font-size="32" font-weight="700" fill="#20333e" text-anchor="start">Build model</text>
+<text x="627" y="128" font-size="30" font-weight="700" fill="#20333e" text-anchor="start">Run in COMSOL</text>
+<text x="627" y="415" font-size="31" font-weight="700" fill="#20333e" text-anchor="start">Inspect results</text>
+<text x="282" y="415" font-size="31" font-weight="700" fill="#20333e" text-anchor="start">Refine model</text>
+<path d="M298 169h203v85H298z" fill="url(#meshfill)" stroke="#5c83b3" stroke-width="2.5"/>
+<path d="M332 169v85" stroke="#7b9fc8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M366 169v85" stroke="#7b9fc8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M400 169v85" stroke="#7b9fc8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M434 169v85" stroke="#7b9fc8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M468 169v85" stroke="#7b9fc8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M298 197h203" stroke="#7b9fc8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M298 226h203" stroke="#7b9fc8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M298 169l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M332 169l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M366 169l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M400 169l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M434 169l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M468 169l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M298 197l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M332 197l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M366 197l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M400 197l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M434 197l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M468 197l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M298 225l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M332 225l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M366 225l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M400 225l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M434 225l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M468 225l34 28" stroke="#7b9fc8" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M294 165v93" stroke="#426a9a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M322 149v14" stroke="#d28d58" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="m318 158 4 6 4-6" fill="none" stroke="#d28d58" stroke-width="2.5"/>
+<path d="M365 149v14" stroke="#d28d58" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="m361 158 4 6 4-6" fill="none" stroke="#d28d58" stroke-width="2.5"/>
+<path d="M408 149v14" stroke="#d28d58" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="m404 158 4 6 4-6" fill="none" stroke="#d28d58" stroke-width="2.5"/>
+<path d="M451 149v14" stroke="#d28d58" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="m447 158 4 6 4-6" fill="none" stroke="#d28d58" stroke-width="2.5"/>
+<path d="M494 149v14" stroke="#d28d58" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="m490 158 4 6 4-6" fill="none" stroke="#d28d58" stroke-width="2.5"/>
+<text x="406" y="290" font-size="26" font-weight="500" fill="#20333e" text-anchor="middle">Geometry &amp; physics</text>
+<rect x="635" y="153" width="66" height="38" rx="7" fill="#fff" stroke="#9ec5af" stroke-width="1.6"/>
+<rect x="642" y="160" width="52" height="24" rx="3" fill="url(#field)" opacity="0.65"/>
+<rect x="713" y="153" width="66" height="38" rx="7" fill="#fff" stroke="#9ec5af" stroke-width="1.6"/>
+<rect x="720" y="160" width="52" height="24" rx="3" fill="url(#field)" opacity="0.75"/>
+<rect x="791" y="153" width="66" height="38" rx="7" fill="#fff" stroke="#9ec5af" stroke-width="1.6"/>
+<rect x="798" y="160" width="52" height="24" rx="3" fill="url(#field)" opacity="0.8500000000000001"/>
+<rect x="635" y="200" width="66" height="38" rx="7" fill="#fff" stroke="#9ec5af" stroke-width="1.6"/>
+<rect x="642" y="207" width="52" height="24" rx="3" fill="url(#field)" opacity="0.65"/>
+<rect x="713" y="200" width="66" height="38" rx="7" fill="#fff" stroke="#9ec5af" stroke-width="1.6"/>
+<rect x="720" y="207" width="52" height="24" rx="3" fill="url(#field)" opacity="0.75"/>
+<rect x="791" y="200" width="66" height="38" rx="7" fill="#fff" stroke="#9ec5af" stroke-width="1.6"/>
+<rect x="798" y="207" width="52" height="24" rx="3" fill="url(#field)" opacity="0.8500000000000001"/>
+<text x="751" y="290" font-size="27" font-weight="500" fill="#20333e" text-anchor="middle">Trial → full study</text>
+<path d="M638 544V451M638 544h225" stroke="#5a5671" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M651 526C677 522 689 481 716 477S758 528 789 504 833 467 854 475" stroke="#8f78b4" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M651 532C677 528 689 486 716 482S758 533 789 509 833 471 854 479" stroke="#54a89c" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 6"/>
+<circle cx="786" cy="505" r="16" fill="#fff" stroke="#b2a4ce" stroke-width="2"/>
+<path d="m779 505 5 5 10-12" stroke="#667d6d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<text x="751" y="576" font-size="27" font-weight="500" fill="#20333e" text-anchor="middle">Compare &amp; check</text>
+<rect x="280" y="451" width="85" height="88" fill="#f6dfc9" stroke="#af8059" stroke-width="2.6"/>
+<path d="M301 451v88" stroke="#bc9776" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M322 451v88" stroke="#bc9776" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M343 451v88" stroke="#bc9776" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M280 473h85" stroke="#bc9776" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M280 495h85" stroke="#bc9776" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M280 517h85" stroke="#bc9776" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M412 451H439L454 471H487L502 451H530V539H502L487 519H454L439 539H412Z" fill="#f3c396" fill-rule="evenodd"/>
+<defs><clipPath id="refined-domain"><path d="M412 451H439L454 471H487L502 451H530V539H502L487 519H454L439 539H412Z" clip-rule="evenodd"/></clipPath></defs>
+<g clip-path="url(#refined-domain)">
+<path d="M412 451v88" stroke="#ba865c" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M436 451v88" stroke="#ba865c" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M460 451v88" stroke="#ba865c" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M484 451v88" stroke="#ba865c" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M508 451v88" stroke="#ba865c" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M532 451v88" stroke="#ba865c" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M412 451h118" stroke="#ba865c" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M412 473h118" stroke="#ba865c" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M412 495h118" stroke="#ba865c" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M412 517h118" stroke="#ba865c" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M412 539h118" stroke="#ba865c" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M412 451l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M436 451l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M460 451l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M484 451l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M508 451l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M412 473l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M436 473l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M460 473l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M484 473l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M508 473l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M412 495l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M436 495l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M460 495l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M484 495l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M508 495l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M412 517l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M436 517l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M460 517l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M484 517l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M508 517l24 22" stroke="#ba865c" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+</g>
+<path d="M412 451H439L454 471H487L502 451H530V539H502L487 519H454L439 539H412Z" stroke="#ad703e" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round" fill-rule="evenodd"/>
+<path d="M378 495h15" stroke="#ad703e" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M402 495 391 489 391 501Z" fill="#ad703e"/>
+<text x="406" y="585" font-size="26" font-weight="500" fill="#20333e" text-anchor="middle">Adjust assumptions</text>
+<path d="M210 199 L233.5 199" stroke="#7396bf" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M246 199 L232 206 L232 192z" fill="#7396bf"/>
+<path d="M565 199 L578.5 199" stroke="#7396bf" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M591 199 L577 206 L577 192z" fill="#7396bf"/>
+<path d="M751 320 L751 350.5" stroke="#65a78c" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M751 363 L744 349 L758 349z" fill="#65a78c"/>
+<path d="M592 486 L577.5 486" stroke="#9682b7" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M565 486 L579 479 L579 493z" fill="#9682b7"/>
+<path d="M406 365 L406 334.5" stroke="#cd9568" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M406 322 L413 336 L399 336z" fill="#cd9568"/>
+<text x="427" y="348" font-size="26" font-weight="600" fill="#a5714d" text-anchor="start">iterate</text>
+<rect x="984" y="375" width="197" height="222" rx="20" fill="#eef5ee" stroke="#bdd2bd" stroke-width="2"/>
+<text x="1082" y="415" font-size="31" font-weight="700" fill="#20333e" text-anchor="middle">Findings</text>
+<path d="M1037 449h61l23 22v75h-84z" fill="#fff" stroke="#85a68b" stroke-width="2.5"/><path d="M1098 449v23h23" fill="none" stroke="#85a68b" stroke-width="2.5"/>
+<path d="M1050 489h37M1050 500h53" stroke="#8caa92" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1050 532v-22m0 22h53m-45-6 14-11 12 5 13-12" stroke="#619475" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<text x="1082" y="576" font-size="26" font-weight="500" fill="#20333e" text-anchor="middle">Plots &amp; report</text>
+<path d="M910 486 L959.5 486" stroke="#718b7c" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M972 486 L958 493 L958 479z" fill="#718b7c"/>
+</g></svg>
