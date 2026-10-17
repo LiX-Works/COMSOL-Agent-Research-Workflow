@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="330" viewBox="0 0 1440 330" role="img" aria-labelledby="title desc">
+<title id="title">COMSOL agent research workflow</title><desc id="desc">An AI agent connects the research question, model, computation, analysis and explanation through the COMSOL Java API. The researcher defines goals and reviews conclusions.</desc>
+<defs><linearGradient id="card" x2="0" y2="1"><stop stop-color="#f7fafc"/><stop offset="1" stop-color="#e7eff5"/></linearGradient><linearGradient id="center" x2="1" y2="1"><stop stop-color="#365b74"/><stop offset=".55" stop-color="#18394f"/><stop offset="1" stop-color="#285b69"/></linearGradient><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 8 5 1 9" fill="none" stroke="#385d73" stroke-width="2"/></marker></defs>
+<rect width="1440" height="330" rx="18" fill="#ffffff"/>
+<g font-family="Arial,Helvetica,sans-serif"><text x="36" y="44" font-size="23" font-weight="700" fill="#16384e">An AI agent connects the research workflow</text><text x="36" y="73" font-size="16" fill="#4d6272">Native COMSOL Java API · command-line execution · interpretable results</text>
+<path d="M280 183h24" fill="none" stroke="#385d73" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="36" y="110" width="242" height="146" rx="19" fill="url(#card)" stroke="#8ba5b8" stroke-width="1.6"/>
+<g transform="translate(56 130)" stroke="#18394f" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h34v25H14L6 33v-8H0z"/><path d="M10 9h14M10 16h9"/></g>
+<text x="56" y="201" font-size="23" font-weight="700" fill="#18394f">Question</text><text x="56" y="230" font-size="15" fill="#3b5669">Assumptions &amp; observables</text>
+<path d="M558 183h24" fill="none" stroke="#385d73" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="314" y="110" width="242" height="146" rx="19" fill="url(#card)" stroke="#8ba5b8" stroke-width="1.6"/>
+<g transform="translate(334 130)" stroke="#18394f" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h35v30H0zM12 0v30M23 0v30M0 10h35M0 20h35"/></g>
+<text x="334" y="201" font-size="23" font-weight="700" fill="#18394f">Model</text><text x="334" y="230" font-size="15" fill="#3b5669">Geometry &amp; physics</text>
+<path d="M836 183h24" fill="none" stroke="#385d73" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="592" y="110" width="242" height="146" rx="19" fill="url(#center)" stroke="#8ba5b8" stroke-width="1.6"/>
+<g transform="translate(612 130)" stroke="#ffffff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m3 0 25 15L3 30z"/><path d="M34 1v28"/></g>
+<text x="612" y="201" font-size="23" font-weight="700" fill="#ffffff">Run</text><text x="612" y="230" font-size="15" fill="#dcecf3">Pilot &amp; batch calculations</text>
+<path d="M1114 183h24" fill="none" stroke="#385d73" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="870" y="110" width="242" height="146" rx="19" fill="url(#card)" stroke="#8ba5b8" stroke-width="1.6"/>
+<g transform="translate(890 130)" stroke="#18394f" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0v31h36M6 23l9-11 9 5 10-17"/><circle cx="15" cy="12" r="2"/><circle cx="24" cy="17" r="2"/></g>
+<text x="890" y="201" font-size="23" font-weight="700" fill="#18394f">Analyze</text><text x="890" y="230" font-size="15" fill="#3b5669">Fields &amp; comparisons</text>
+<rect x="1148" y="110" width="242" height="146" rx="19" fill="url(#card)" stroke="#8ba5b8" stroke-width="1.6"/>
+<g transform="translate(1168 130)" stroke="#18394f" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 0h24l8 8v28H4zM28 0v9h8M11 16h17M11 23h17M11 30h10"/></g>
+<text x="1168" y="201" font-size="23" font-weight="700" fill="#18394f">Explain</text><text x="1168" y="230" font-size="15" fill="#3b5669">Findings &amp; scope</text>
+<text x="36" y="301" font-size="16" fill="#385469">Researcher: define goals, discuss assumptions, and review scientific conclusions.</text></g></svg>

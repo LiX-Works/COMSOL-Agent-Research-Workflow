@@ -1,0 +1,34 @@
+{
+  "dataset": "Independent public-source reconstruction, historical calculation dated 2026-10-17",
+  "reference_doi": "10.1038/s41565-018-0323-8",
+  "not_experimental_data": true,
+  "source": "EdgeNormal only",
+  "geometry_is_approximate": true,
+  "source_strength_q0_A_per_m": 0.01,
+  "source_strength_is_not_experimentally_calibrated": true,
+  "direct_vs_kernel": {
+    "S0": {
+      "representative_points": 6,
+      "max_source_specific_scaled_error": 0.0017469475082408697,
+      "relative_error_floor_fraction_of_source_probe_peak": 0.01,
+      "max_source_probe_peak_A": 9.154947306881883e-13
+    },
+    "S1": {
+      "representative_points": 6,
+      "max_source_specific_scaled_error": 0.0024069169549064255,
+      "relative_error_floor_fraction_of_source_probe_peak": 0.01,
+      "max_source_probe_peak_A": 2.4167159868949403e-12
+    },
+    "S2": {
+      "representative_points": 8,
+      "max_source_specific_scaled_error": 0.0014472728622261294,
+      "relative_error_floor_fraction_of_source_probe_peak": 0.01,
+      "max_source_probe_peak_A": 1.0307636473589723e-12
+    }
+  },
+  "S0_mesh_refinement": {
+    "max_source_specific_scaled_change": 0.0064135566567854385,
+    "scope": "S0 representative points only; no separate S1 or S2 mesh-refinement study"
+  },
+  "historical_vs_new_runs": "These supplied results predate the portable launcher. New --smoke outputs only validate a short execution path."
+}

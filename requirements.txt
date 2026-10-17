@@ -1,0 +1,3 @@
+# Optional plotting only. Execution and numerical audit use Python's standard library.
+matplotlib>=3.8,<4
+numpy>=1.26,<3

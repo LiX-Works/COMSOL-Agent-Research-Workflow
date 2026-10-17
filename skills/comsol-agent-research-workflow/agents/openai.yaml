@@ -1,0 +1,4 @@
+interface:
+  display_name: "COMSOL Agent Research Workflow"
+  short_description: "Plan, run, and analyze COMSOL research simulations"
+  default_prompt: "Use $comsol-agent-research-workflow to plan, execute, and interpret a COMSOL simulation task."
