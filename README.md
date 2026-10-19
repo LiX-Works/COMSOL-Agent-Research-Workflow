@@ -1,12 +1,8 @@
 # COMSOL Agent Research Workflow
 
-**Work with an AI agent to build COMSOL models, run studies, and explain the results.**
+**English** | [简体中文](README.zh-CN.md)
 
-A Skill that lets a coding agent run COMSOL through its native Java API and command line. Describe the research question; the agent builds or inspects the model, runs a bounded study, checks the numbers, and explains what to change next.
-
-- **Starts from the physics.** Pins down the observable, boundary conditions, and assumptions before choosing a solver or a plot.
-- **Trial first, then the full study.** A representative pilot sets the batch size; per-case logs and checkpoints let an interrupted sweep resume.
-- **Checks before claims.** Conservation, limiting cases, and mesh sensitivity come before interpretation; numerical completion, physical consistency, and agreement with experiment are reported separately.
+A Skill for COMSOL Multiphysics research with a coding agent, working through COMSOL's native Java API and command line rather than an MCP server. Before building or modifying a model, the agent states the observable, boundary conditions, and assumptions; it runs a representative trial before the full study, and checks conservation, limiting cases, and mesh sensitivity before interpreting results. Reports keep numerical completion, physical consistency, and agreement with experiment separate.
 
 ![Agent research loop led by an AI agent: build a model, run it in COMSOL, inspect the results, and refine the model; inspection can send cases back to rerun, and results leave the loop as plots and a report](assets/workflow.png)
 
@@ -35,4 +31,4 @@ plan a comparison, run a representative case, and explain the results.
 
 Requires a local coding agent and licensed COMSOL. Uses the native Java API and command line; no additional MCP server. The bundled example was checked on Windows with COMSOL 6.4.0.293. [Validation details](VALIDATION.md).
 
-[Chinese](README.zh-CN.md) · [MIT License](LICENSE) · [Attribution](NOTICE.md)
+[MIT License](LICENSE) · [Attribution](NOTICE.md)

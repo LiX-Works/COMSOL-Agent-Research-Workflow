@@ -1,12 +1,8 @@
 # COMSOL Agent Research Workflow
 
-**与 AI Agent 一起建立 COMSOL 模型、开展计算并解释结果。**
+[English](README.md) | **简体中文**
 
-这是一个 Skill，让编程 Agent 通过 COMSOL 原生 Java API 和命令行开展仿真。说明你的科研问题，Agent 会建立或检查模型、运行有边界的计算、核对数值，并解释下一步该调整什么。
-
-- **从物理问题出发。** 先明确观测量、边界条件和假设，再选择求解器和作图方式。
-- **先试算，再全面计算。** 用代表性工况确定批量规模；逐个工况记录日志和断点，中断的扫描可以续算。
-- **先核对，再下结论。** 解释结果前先检查守恒、极限情形和网格敏感性；数值完成、物理自洽与实验吻合分开报告。
+一个借助编程 Agent 开展 COMSOL Multiphysics 仿真研究的 Skill，通过 COMSOL 原生 Java API 与命令行工作，无需 MCP 服务。建立或修改模型前，Agent 先明确观测量、边界条件和假设；全面计算前先运行代表性试算；解释结果前检查守恒、极限情形和网格敏感性。报告中，数值完成、物理自洽与实验吻合分开陈述。
 
 ![由 AI Agent 主导的科研循环：建模、COMSOL 计算、查看结果、调整模型；查看结果时可退回重算，最终输出图表和报告](assets/workflow.png)
 
@@ -35,4 +31,4 @@
 
 需要可执行本地命令的编程 Agent 和具有许可的 COMSOL。采用原生 Java API 与命令行，无需额外 MCP 服务。配套示例已在 Windows、COMSOL 6.4.0.293 下检查。[验证详情](VALIDATION.md)。
 
-[English](README.md) · [MIT 许可证](LICENSE) · [来源说明](NOTICE.md)
+[MIT 许可证](LICENSE) · [来源说明](NOTICE.md)
