@@ -16,3 +16,6 @@ node_modules/
 runs/
 outputs/
 .DS_Store
+
+# Browser wrapper written by assets/source/build_workflow.py for PNG rendering
+assets/source/workflow.html

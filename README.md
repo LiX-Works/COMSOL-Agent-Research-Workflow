@@ -4,7 +4,7 @@
 
 Describe your research task. The agent helps develop the model, organize calculations, and use the results to decide what to change next.
 
-![Agent research loop: build a model, run in COMSOL, inspect results, and refine the model; produce plots and findings](assets/workflow.svg)
+![Agent research loop led by an AI agent: build a model, run it in COMSOL, inspect the results, and refine the model; inspection can send cases back to rerun, and results leave the loop as plots and a report](assets/workflow.png)
 
 ## Example: edge-current collection
 
