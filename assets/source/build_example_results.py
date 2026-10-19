@@ -70,7 +70,7 @@ def main():
     cb.solids.set_rasterized(False)
     cb.set_label(r"$I\,/\,I_{\mathrm{peak}}$",labelpad=8)
     cb.outline.set_linewidth(.8)
-    ax.text(-.34,1.06,"A",transform=ax.transAxes,fontweight="bold",fontsize=27)
+    ax.text(-.34,1.06,"a",transform=ax.transAxes,fontweight="bold",fontsize=27)
     ax2=fig.add_subplot(grid[0,1])
     for c in (3,6.5,10,13.5):
         ax2.axvspan(c-.5,c+.5,color="#e8e8e8",zorder=0,lw=0)
@@ -85,12 +85,12 @@ def main():
     ax2.tick_params(direction="out",length=5)
     ax2.legend(loc="upper right",frameon=False,handlelength=2.8,borderpad=.2)
     ax2.spines[["top","right"]].set_visible(False)
-    ax2.text(-.19,1.06,"B",transform=ax2.transAxes,fontweight="bold",fontsize=27)
+    ax2.text(-.19,1.06,"b",transform=ax2.transAxes,fontweight="bold",fontsize=27)
     args.output_dir.mkdir(parents=True,exist_ok=True)
     stem=args.output_dir/"example-results"
     description=("Replot of an existing independent public-source S2 simulation, not a new solve. "
-                 "Panel A: every scan value on its original grid, without interpolation. "
-                 "Panel B: exact x=-0.7 and +0.7 micrometre scan columns; grey bands mark cross arms. "
+                 "Panel a: every scan value on its original grid, without interpolation. "
+                 "Panel b: exact x=-0.7 and +0.7 micrometre scan columns; grey bands mark cross arms. "
                  f"Both panels use the same full-S2-map peak {peak:.16e} A. "
                  "The source strength is arbitrary, without experimental amplitude calibration. "
                  f"Source CSV SHA256: {digest}. Reference DOI: 10.1038/s41565-018-0323-8.")

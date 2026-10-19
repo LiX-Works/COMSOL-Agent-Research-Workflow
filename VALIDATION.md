@@ -25,7 +25,7 @@ This smoke check establishes the short execution path, not a resolved spatial ma
 - Existing-output rejection and invalid thread-count handling passed.
 - The optional plotting script generated a full scan plot from a separately identified historical demonstration CSV using isolated plotting dependencies. It rejected the sparse smoke output as a full map.
 - Local documentation links, English publication content, and personal-path screening passed. README.zh-CN.md is the intentional Chinese translation.
-- The workflow SVG and result plot were rendered and visually inspected.
+- The workflow figure and result plot were rendered and visually inspected.
 
 An initial smoke attempt stopped before any solve because Java file-directory creation was disallowed by COMSOL's existing security preferences. The launcher now creates directories in Python and writes model outputs through COMSOL's own API. No global COMSOL security preference was changed.
 

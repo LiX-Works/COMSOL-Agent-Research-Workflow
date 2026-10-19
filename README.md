@@ -2,7 +2,11 @@
 
 **Work with an AI agent to build COMSOL models, run studies, and explain the results.**
 
-Describe your research task. The agent helps develop the model, organize calculations, and use the results to decide what to change next.
+A Skill that lets a coding agent run COMSOL through its native Java API and command line. Describe the research question; the agent builds or inspects the model, runs a bounded study, checks the numbers, and explains what to change next.
+
+- **Starts from the physics.** Pins down the observable, boundary conditions, and assumptions before choosing a solver or a plot.
+- **Trial first, then the full study.** A representative pilot sets the batch size; per-case logs and checkpoints let an interrupted sweep resume.
+- **Checks before claims.** Conservation, limiting cases, and mesh sensitivity come before interpretation; numerical completion, physical consistency, and agreement with experiment are reported separately.
 
 ![Agent research loop led by an AI agent: build a model, run it in COMSOL, inspect the results, and refine the model; inspection can send cases back to rerun, and results leave the loop as plots and a report](assets/workflow.png)
 
@@ -12,7 +16,7 @@ We applied the workflow to a reconstructed four-cross conductor using the edge-s
 
 ![Calculated scanning-current response and longitudinal scan profiles](examples/edge-current/assets/example-results.png)
 
-**Figure 1.** **(A)** Bottom-electrode current versus illumination-spot position. **(B)** Scan profiles at x = ±0.7 µm; grey bands indicate the cross arms. Both panels are normalized by the maximum absolute current of the complete scan. The geometry is approximate and the source strength illustrative; the comparison is qualitative, without experimental current calibration.
+**Figure 1.** **(a)** Bottom-electrode current versus illumination-spot position. **(b)** Scan profiles at x = ±0.7 µm; grey bands indicate the cross arms. Both panels are normalized by the maximum absolute current of the complete scan. The geometry is approximate and the source strength illustrative; the comparison is qualitative, without experimental current calibration.
 
 **[1]** Ma, Q. et al. *Giant intrinsic photoresponse in pristine graphene.* **Nature Nanotechnology 14**, 145–150 (2019). [doi:10.1038/s41565-018-0323-8](https://doi.org/10.1038/s41565-018-0323-8).
 

@@ -14,7 +14,7 @@ cli.add_argument("--output", type=Path, default=Path(__file__).resolve().parent 
 args = cli.parse_args()
 
 W, H = 1600, 880
-FONT = "'Segoe UI Variable Display','Segoe UI',system-ui,sans-serif"
+FONT = "Arial,Helvetica,sans-serif"
 C = dict(
     ink="#16203A", sub="#2C3850", line="#2E3A55", card="#FFFFFF", cardStroke="#C3CDDD",
     band="#E9F0F9", amber="#E8960F", amberText="#A9650A", lead0="#22386A", lead1="#3866A6",
@@ -44,9 +44,17 @@ def line(d, stroke, width, extra=""):
         f'stroke-linecap="round" stroke-linejoin="round" {extra}/>')
 
 
-def arrow(x1, y1, x2, y2, color=C["line"], marker="arrow"):
-    add(f'<path d="M{f(x1)} {f(y1)} L{f(x2)} {f(y2)}" fill="none" stroke="{color}" '
-        f'stroke-width="5.5" marker-end="url(#{marker})"/>')
+def arrow(x1, y1, x2, y2, color=C["line"], marker=None):
+    # The shaft stops inside the head, so the tip stays a sharp point.
+    head, half = 22, 11
+    dx, dy = x2 - x1, y2 - y1
+    n = math.hypot(dx, dy)
+    ux, uy = dx / n, dy / n
+    bx, by = x2 - head * ux, y2 - head * uy
+    ex, ey = x2 - 0.6 * head * ux, y2 - 0.6 * head * uy
+    add(f'<path d="M{f(x1)} {f(y1)} L{f(ex)} {f(ey)}" fill="none" stroke="{color}" stroke-width="5.5"/>')
+    add(f'<path d="M{f(x2)} {f(y2)} L{f(bx - half * uy)} {f(by + half * ux)} '
+        f'L{f(bx + half * uy)} {f(by - half * ux)}Z" fill="{color}"/>')
 
 
 # ---------- layout ----------
@@ -73,7 +81,7 @@ def step_card(key, n, title, caption):
     text(x + 46, y + 55, str(n), 24, 700, "#FFFFFF", "middle")
     text(x + 80, y + 56, title, 30, 700)
     add(f'<rect x="{x + 28}" y="{y + 86}" width="{CW - 56}" height="150" rx="16" fill="{tint}"/>')
-    text(x + CW / 2, y + 274, caption, 24, 600, C["sub"], "middle")
+    text(x + CW / 2, y + 274, caption, 24, 400, C["sub"], "middle")
     return x + 28, y + 86, CW - 56, 150
 
 
@@ -82,7 +90,7 @@ def side_card(x, y, lines, caption):
         f'stroke="{C["cardStroke"]}" stroke-width="1.8" filter="url(#shadow)"/>')
     for i, s in enumerate(lines):
         text(x + SIDE_W / 2, y + 56 + i * 36, s, 30, 700, anchor="middle")
-    text(x + SIDE_W / 2, y + 274, caption, 24, 600, C["sub"], "middle")
+    text(x + SIDE_W / 2, y + 274, caption, 24, 400, C["sub"], "middle")
 
 
 # ---------- illustrations ----------
@@ -223,10 +231,10 @@ left_mid, right_mid = cols[0] + CW / 2, cols[1] + CW / 2
 arrow(IN_X + SIDE_W + g, top_mid, cols[0] - g, top_mid)
 arrow(cols[0] + CW + g, top_mid, cols[1] - g, top_mid)
 arrow(right_mid - 34, rows[0] + CH + g, right_mid - 34, rows[1] - g)
-arrow(right_mid + 34, rows[1] - g, right_mid + 34, rows[0] + CH + g, C["amber"], "arrowAmber")
+arrow(right_mid + 34, rows[1] - g, right_mid + 34, rows[0] + CH + g, C["amber"])
 text(right_mid + 58, HUB[1] + 9, "rerun", 25, 700, C["amberText"])
 arrow(cols[1] - g, bot_mid, cols[0] + CW + g, bot_mid)
-arrow(left_mid, rows[1] - g, left_mid, rows[0] + CH + g, C["amber"], "arrowAmber")
+arrow(left_mid, rows[1] - g, left_mid, rows[0] + CH + g, C["amber"])
 text(left_mid + 24, HUB[1] + 9, "iterate", 25, 700, C["amberText"])
 arrow(cols[1] + CW + g, bot_mid, OUT_X - g, bot_mid)
 
@@ -245,8 +253,6 @@ defs = f"""<defs>
   <linearGradient id="meshFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D3E3FB"/><stop offset="1" stop-color="#B3CCF0"/></linearGradient>
   <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#16203A" flood-opacity=".10"/></filter>
   <filter id="hubShadow" x="-40%" y="-40%" width="180%" height="190%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#22386A" flood-opacity=".35"/></filter>
-  <marker id="arrow" viewBox="0 0 16 16" refX="13" refY="8" markerWidth="21" markerHeight="21" markerUnits="userSpaceOnUse" orient="auto"><path d="M1.5 1.5 L14.5 8 L1.5 14.5 Z" fill="{C['line']}"/></marker>
-  <marker id="arrowAmber" viewBox="0 0 16 16" refX="13" refY="8" markerWidth="21" markerHeight="21" markerUnits="userSpaceOnUse" orient="auto"><path d="M1.5 1.5 L14.5 8 L1.5 14.5 Z" fill="{C['amber']}"/></marker>
   {''.join(defs_extra)}
 </defs>"""
 svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
