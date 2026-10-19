@@ -2,7 +2,12 @@
 
 **English** | [简体中文](README.zh-CN.md)
 
-A Skill for COMSOL Multiphysics research with a coding agent, working through COMSOL's native Java API and command line rather than an MCP server. Before building or modifying a model, the agent states the observable, boundary conditions, and assumptions; it runs a representative trial before the full study, and checks conservation, limiting cases, and mesh sensitivity before interpreting results. Reports keep numerical completion, physical consistency, and agreement with experiment separate.
+A Skill that lets a coding agent build, run, and check COMSOL Multiphysics studies through the native Java API and command line, without an MCP server. The checks are part of the workflow:
+
+- The observable, boundary conditions, and assumptions are stated before a model is built or changed.
+- A representative trial sets the scale of the full study; interrupted sweeps resume from checkpoints.
+- Conservation, limiting cases, and mesh sensitivity are checked before results are interpreted.
+- Numerical completion, physical consistency, and agreement with experiment are reported separately.
 
 ![Agent research loop led by an AI agent: build a model, run it in COMSOL, inspect the results, and refine the model; inspection can send cases back to rerun, and results leave the loop as plots and a report](assets/workflow.png)
 
