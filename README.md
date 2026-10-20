@@ -9,7 +9,10 @@ A Skill that lets a coding agent build, run, and check COMSOL Multiphysics studi
 - Conservation, limiting cases, and mesh sensitivity are checked before results are interpreted.
 - Numerical completion, physical consistency, and agreement with experiment are reported separately.
 
-![Agent research loop led by an AI agent: build a model, run it in COMSOL, inspect the results, and refine the model; inspection can send cases back to rerun, and results leave the loop as plots and a report](assets/workflow.png)
+> [!IMPORTANT]
+> **Human-in-the-Loop.** Agents can hallucinate, drift from the goal, or chase irrelevant numbers. Treat each report as a draft: check the details and the runs behind it, watch the agent at work, and let a researcher correct it and set the next step.
+
+![Research loop that starts from the researcher's question: the agent builds a model, runs it in COMSOL, inspects the results, and refines the model, sending cases back to rerun when needed; findings return to the researcher as plots and a report](assets/workflow.png)
 
 ## Example: edge-current collection
 
